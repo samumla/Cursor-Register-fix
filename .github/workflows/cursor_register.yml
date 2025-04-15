@@ -61,7 +61,7 @@ jobs:
         if: ${{ github.event.inputs.email_server == 'TempEmail' && github.event.inputs.ingest_to_oneapi == 'false' && github.event.inputs.upload_artifact == 'true' }}
         run: |
           python3 ./cursor_register.py register.number=${{ github.event.inputs.number }} register.max_workers=${{ github.event.inputs.max_workers }} `
-          register.email_server.name="temp_email_server"
+          register.email_server.name="temp_email_server" register.email_server.use_custom_address=false
 
       - name: "[IMAP] Update email configuration"
         if: ${{ github.event.inputs.email_server == 'IMAP' }}
