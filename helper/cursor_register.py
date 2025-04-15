@@ -159,6 +159,7 @@ class CursorRegister:
         if password is None:
             fake = Faker()
             password = fake.password(length=12, special_chars=True, digits=True, upper_case=True, lower_case=True)
+            print(f"[Register][{self.thread_id}][{retry}][{password}]")
 
         tab = self.browser.new_tab(self.CURSOR_SIGNUP_URL)
         # Input email
